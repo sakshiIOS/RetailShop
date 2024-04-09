@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "63652A08-4B5C-4F69-BD33-E57F8F92542D"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE6821F1-5A98-4789-93DA-D94D2CDB77F3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Retail Shop/Product/View/Controller/ProductCartCell/ProductCartCell.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "productDetailConfiguration()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EE6821F1-5A98-4789-93DA-D94D2CDB77F3 - 7799c727ef851b09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Retail_Shop.ProductCartCell.productDetailConfiguration() -&gt; ()"
+                  moduleName = "Retail Shop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sakshi25/Desktop/Sakshi/Retail%20Shop/Retail%20Shop/Product/View/Controller/ProductCartCell/ProductCartCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2325">
+               </Location>
+               <Location
+                  uuid = "EE6821F1-5A98-4789-93DA-D94D2CDB77F3 - 7799c727ef851b09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Retail_Shop.ProductCartCell.productDetailConfiguration() -&gt; ()"
+                  moduleName = "Retail Shop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sakshi25/Desktop/Sakshi/Retail%20Shop/Retail%20Shop/Product/View/Controller/ProductCartCell/ProductCartCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "2137">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "49AB7D91-63F8-494C-A972-5422C765510B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Retail Shop/Product/View/Controller/Product/ProductDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "productDetails()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "49AB7D91-63F8-494C-A972-5422C765510B - ccd395011fa2f8dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Retail_Shop.ProductDetailsVC.productDetails() -&gt; ()"
+                  moduleName = "Retail Shop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sakshi25/Desktop/Sakshi/Retail%20Shop/Retail%20Shop/Product/View/Controller/Product/ProductDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "3954">
+               </Location>
+               <Location
+                  uuid = "49AB7D91-63F8-494C-A972-5422C765510B - ccd395011fa2f8dc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Retail_Shop.ProductDetailsVC.productDetails() -&gt; ()"
+                  moduleName = "Retail Shop"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Sakshi25/Desktop/Sakshi/Retail%20Shop/Retail%20Shop/Product/View/Controller/Product/ProductDetailsVC.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "3845">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
