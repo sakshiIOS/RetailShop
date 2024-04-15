@@ -46,7 +46,8 @@ class ProductCartCell: UITableViewCell {
         quantityLabe2.text = "Quantity - 1"
         priceLabel.text = "$\(product.price )"
       //  rateButton.setTitle("\(product.rating ?? 0)", for: .normal)
-        productImageView.setImage(with: product.images ?? "")
+        productImageView.imageFromServerURL(urlString: product.images ?? "", PlaceHolderImage: UIImage.init(named: "ImagePlaceHolder")!)
+       // productImageView.setImage(with: product.images ?? "")
         
     }
 }

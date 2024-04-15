@@ -29,17 +29,17 @@ class ProductDetailsVC: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        self.configuration()
+        self.configurationDetailCell()
     }
     
     
     
-    func configuration() {
+    func configurationDetailCell() {
         
         let nib = UINib(nibName: "ProductDetailImageCollectionCell", bundle: nil)
         productCollectionView.register(nib, forCellWithReuseIdentifier: "ProductDetailImageCollectionCell")
         
-        viewCartModel.fetchCartItems()
+        self.viewCartModel.fetchCartItems()
         self.productDetails()
     }
     

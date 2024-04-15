@@ -46,7 +46,9 @@ class ProductCell: UITableViewCell {
         descriptionLabel.text = product.description
         priceLabel.text = "$\(product.price ?? 0)"
         rateButton.setTitle("\(product.rating ?? 0)", for: .normal)
-        productImageView.setImage(with: product.thumbnail ?? "")
+        productImageView.imageFromServerURL(urlString: product.thumbnail ?? "", PlaceHolderImage: UIImage.init(named: "ImagePlaceHolder")!)
+
+       // productImageView.setImage(with: product.thumbnail ?? "")
         
     }
     

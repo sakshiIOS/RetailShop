@@ -21,36 +21,36 @@ class ProductCartListVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.configuration()
+        self.configurationCartCell()
     }
     
-    func configuration() {
+    func configurationCartCell() {
  
         self.productCartTableView.register(UINib(nibName: "ProductCartCell", bundle: nil), forCellReuseIdentifier: "ProductCartCell")
-
         self.initViewModel()
      
     }
     
     func initViewModel(){
-        
         self.viewModel.fetchCartItems()
-        self.UI()
-        
+        self.UIProductCart()
     }
 
-    func UI(){
+    func UIProductCart(){
         
         if viewModel.productCart.isEmpty{
             self.lblCartValue.isHidden = true
             self.lblCartValue.clipsToBounds = true
             self.lblCartValue.layer.cornerRadius = 10
+            self.productCartTableView.isHidden = true
         }else{
+            self.productCartTableView.isHidden = false
             self.lblCartValue.isHidden = false
             self.lblCartValue.clipsToBounds = true
             self.lblCartValue.layer.cornerRadius = 10
             self.lblCartValue.text = "\(viewModel.productCart.count)"
         }
+        
       
      }
     //MARK: - @IBAction
@@ -93,7 +93,6 @@ extension ProductCartListVC: UITableViewDataSource,UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProductCartCell") as! ProductCartCell
-//        let product = viewModel.products[indexPath.row]
         cell.product = viewModel.productCart[indexPath.row]
         cell.minusButton.tag = indexPath.row
         cell.minusButton.addTarget(self, action: #selector(btnMinus(sender:)), for: .touchUpInside)

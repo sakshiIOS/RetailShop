@@ -10,6 +10,8 @@
 		423C12CA2BBBECBE005A57B5 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C12C92BBBECBE005A57B5 /* Constant.swift */; };
 		423C12CC2BBBF9A2005A57B5 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C12CB2BBBF9A2005A57B5 /* ProductViewModel.swift */; };
 		423C12D32BBC001F005A57B5 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423C12D22BBC001F005A57B5 /* UIImageView + Extension.swift */; };
+		429202D12BC866750072AFB7 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 429202D02BC866750072AFB7 /* Kingfisher */; };
+		429202D92BC866980072AFB7 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 429202D82BC866980072AFB7 /* SVProgressHUD */; };
 		429A6E162BBAAEC500FBECFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A6E152BBAAEC500FBECFB /* AppDelegate.swift */; };
 		429A6E182BBAAEC500FBECFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A6E172BBAAEC500FBECFB /* SceneDelegate.swift */; };
 		429A6E1D2BBAAEC500FBECFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429A6E1B2BBAAEC500FBECFB /* Main.storyboard */; };
@@ -37,8 +39,6 @@
 		42EF14562BBE9A1300CFABC3 /* ProductCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF14552BBE9A1300CFABC3 /* ProductCartViewModel.swift */; };
 		42EF145B2BC05E0C00CFABC3 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF145A2BC05E0C00CFABC3 /* ProductDetailsViewModel.swift */; };
 		42EF145F2BC3B82600CFABC3 /* AKAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF145E2BC3B82600CFABC3 /* AKAlertController.swift */; };
-		42EF14622BC52DB100CFABC3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 42EF14612BC52DB100CFABC3 /* Kingfisher */; settings = {ATTRIBUTES = (Required, ); }; };
-		42EF14652BC52DC300CFABC3 /* SVProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 42EF14642BC52DC300CFABC3 /* SVProgressHUD */; settings = {ATTRIBUTES = (Required, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,8 +100,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42EF14652BC52DC300CFABC3 /* SVProgressHUD in Frameworks */,
-				42EF14622BC52DB100CFABC3 /* Kingfisher in Frameworks */,
+				429202D92BC866980072AFB7 /* SVProgressHUD in Frameworks */,
+				429202D12BC866750072AFB7 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +145,33 @@
 				423C12D22BBC001F005A57B5 /* UIImageView + Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		429202DA2BCD1C440072AFB7 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				429A6E562BBBDAC600FBECFB /* ProductListVC.swift */,
+				42EF143A2BBD516F00CFABC3 /* ProductListCell */,
+			);
+			path = ProductList;
+			sourceTree = "<group>";
+		};
+		429202DB2BCD1C620072AFB7 /* ProductCart */ = {
+			isa = PBXGroup;
+			children = (
+				42EF14482BBE948500CFABC3 /* ProductCartListVC.swift */,
+				42EF144A2BBE959900CFABC3 /* ProductCartCell */,
+			);
+			path = ProductCart;
+			sourceTree = "<group>";
+		};
+		429202DC2BCD1C780072AFB7 /* ProductDetails */ = {
+			isa = PBXGroup;
+			children = (
+				42EF14352BBD48D100CFABC3 /* ProductDetailCell */,
+				42EF14312BBD48B600CFABC3 /* ProductDetailsVC.swift */,
+			);
+			path = ProductDetails;
 			sourceTree = "<group>";
 		};
 		429A6E092BBAAEC500FBECFB = {
@@ -266,22 +293,11 @@
 		429A6E552BBBDA7800FBECFB /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				42EF144A2BBE959900CFABC3 /* ProductCartCell */,
-				42EF143A2BBD516F00CFABC3 /* ProductListCell */,
-				42EF14352BBD48D100CFABC3 /* ProductDetailCell */,
-				42EF14302BBD488E00CFABC3 /* Product */,
+				429202DA2BCD1C440072AFB7 /* ProductList */,
+				429202DB2BCD1C620072AFB7 /* ProductCart */,
+				429202DC2BCD1C780072AFB7 /* ProductDetails */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		42EF14302BBD488E00CFABC3 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				429A6E562BBBDAC600FBECFB /* ProductListVC.swift */,
-				42EF14312BBD48B600CFABC3 /* ProductDetailsVC.swift */,
-				42EF14482BBE948500CFABC3 /* ProductCartListVC.swift */,
-			);
-			path = Product;
 			sourceTree = "<group>";
 		};
 		42EF14352BBD48D100CFABC3 /* ProductDetailCell */ = {
@@ -339,8 +355,8 @@
 			);
 			name = "Retail Shop";
 			packageProductDependencies = (
-				42EF14612BC52DB100CFABC3 /* Kingfisher */,
-				42EF14642BC52DC300CFABC3 /* SVProgressHUD */,
+				429202D02BC866750072AFB7 /* Kingfisher */,
+				429202D82BC866980072AFB7 /* SVProgressHUD */,
 			);
 			productName = "Retail Shop";
 			productReference = 429A6E122BBAAEC500FBECFB /* Retail Shop.app */;
@@ -415,8 +431,8 @@
 			);
 			mainGroup = 429A6E092BBAAEC500FBECFB;
 			packageReferences = (
-				42EF14602BC52DB100CFABC3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				42EF14632BC52DC300CFABC3 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
+				429202CF2BC866750072AFB7 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				429202D72BC866980072AFB7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */,
 			);
 			productRefGroup = 429A6E132BBAAEC500FBECFB /* Products */;
 			projectDirPath = "";
@@ -828,7 +844,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		42EF14602BC52DB100CFABC3 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+		429202CF2BC866750072AFB7 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -836,7 +852,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		42EF14632BC52DC300CFABC3 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
+		429202D72BC866980072AFB7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SVProgressHUD/SVProgressHUD.git";
 			requirement = {
@@ -847,14 +863,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		42EF14612BC52DB100CFABC3 /* Kingfisher */ = {
+		429202D02BC866750072AFB7 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42EF14602BC52DB100CFABC3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			package = 429202CF2BC866750072AFB7 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		42EF14642BC52DC300CFABC3 /* SVProgressHUD */ = {
+		429202D82BC866980072AFB7 /* SVProgressHUD */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 42EF14632BC52DC300CFABC3 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
+			package = 429202D72BC866980072AFB7 /* XCRemoteSwiftPackageReference "SVProgressHUD" */;
 			productName = SVProgressHUD;
 		};
 /* End XCSwiftPackageProductDependency section */

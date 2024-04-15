@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ProductDetailImageCollectionCell: UICollectionViewCell {
     
@@ -24,12 +25,9 @@ class ProductDetailImageCollectionCell: UICollectionViewCell {
     
     func productDetailConfiguration() {
         guard let product else { return }
-        
-        
         for i in 0..<(product.images?.count ?? 0){
+           // productImageView.imageFromServerURL(urlString: product.images?[i] ?? "", PlaceHolderImage: UIImage.init(named: "ImagePlaceHolder")!)
             productImageView.setImage(with: product.images?[i] ?? "")
         }
-        
-        
     }
 }

@@ -5,11 +5,23 @@
 
 import UIKit
 
+struct ProgressDialog {
+    static var alert = UIAlertController()
+    static var progressView = UIProgressView()
+    static var progressPoint : Float = 0{
+        didSet{
+            if(progressPoint == 1){
+                ProgressDialog.alert.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+}
+
 enum AppStoryboard : String {
     
     case Main
-
-
+    
+    
     var instance : UIStoryboard {
         
         return UIStoryboard(name: self.rawValue, bundle: Bundle.main)
@@ -35,6 +47,22 @@ enum AppStoryboard : String {
 
 
 extension UIViewController{
+    
+    func LoadingStart(){
+        ProgressDialog.alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.startAnimating();
+        
+        ProgressDialog.alert.view.addSubview(loadingIndicator)
+        present(ProgressDialog.alert, animated: true, completion: nil)
+    }
+    
+    func LoadingStop(){
+        ProgressDialog.alert.dismiss(animated: true, completion: nil)
+    }
     
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
@@ -63,7 +91,7 @@ extension UIView{
     func applyGradient(colours: [UIColor]) -> CAGradientLayer {
         return self.applyGradient(colours: colours, locations: nil)
     }
-
+    
     @discardableResult
     func applyGradient(colours: [UIColor], locations: [NSNumber]?) -> CAGradientLayer {
         let gradient: CAGradientLayer = CAGradientLayer()
@@ -85,48 +113,48 @@ extension UIView{
         return gradient
     }
     @IBInspectable var corners: CGFloat {
-           get {
-               return layer.cornerRadius
-           }
-           set {
-               layer.cornerRadius = newValue
-               layer.masksToBounds = newValue > 0
-           }
-       }
-       
-       @IBInspectable var borderColor: UIColor {
-           get {
-               guard let color = layer.borderColor else {
-                   return UIColor.clear
-               }
-               return UIColor(cgColor: color)
-           }
-           set {
-               layer.borderColor = newValue.cgColor
-               layer.masksToBounds = true
-           }
-       }
-       
-       @IBInspectable var borderWidth: CGFloat {
-           get {
-               return layer.borderWidth
-           }
-           set {
-               layer.borderWidth = newValue
-               layer.masksToBounds = newValue > 0
-           }
-       }
-       
-       
-       @IBInspectable var maxLength: Int {
-           get {
-               return 10
-           }
-           set {
-               
-           }
-       }
-       
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable var borderColor: UIColor {
+        get {
+            guard let color = layer.borderColor else {
+                return UIColor.clear
+            }
+            return UIColor(cgColor: color)
+        }
+        set {
+            layer.borderColor = newValue.cgColor
+            layer.masksToBounds = true
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    
+    @IBInspectable var maxLength: Int {
+        get {
+            return 10
+        }
+        set {
+            
+        }
+    }
+    
 }
 
 @IBDesignable class RoundedButton: UIButton

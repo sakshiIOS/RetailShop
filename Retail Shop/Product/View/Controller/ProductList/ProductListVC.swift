@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 
 class ProductListVC: UIViewController {
@@ -23,32 +22,29 @@ class ProductListVC: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.configuration()
+        self.configurationProductCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.viewModel.fetchCartItems()
-        self.UI()
+        self.UIProduct()
     }
     
 
-    func configuration() {
-      
-      
-        self.productTableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+    func configurationProductCell() {
+      self.productTableView.register(UINib(nibName: "ProductCell", bundle: nil), forCellReuseIdentifier: "ProductCell")
+        self.observeEvent()
         self.initViewModel()
-        observeEvent()
-        self.UI()
+        self.UIProduct()
     }
     
     func initViewModel(){
         
         self.viewModel.fetchProduct()
         self.viewModel.fetchCartItems()
-        
-       
     }
-    func UI(){
+    
+    func UIProduct(){
         
         if viewModel.productCart.isEmpty{
             self.lblCartValue.isHidden = true
@@ -71,16 +67,22 @@ class ProductListVC: UIViewController {
 
             switch event {
             case .loading:
-                SVProgressHUD.show()
+                DispatchQueue.main.async {
+                    self.LoadingStart()
+                }
                 /// Indicator show
                 print("Product loading....")
             case .stoploading:
-                // Indicator hide kardo
-                SVProgressHUD.dismiss()
+                DispatchQueue.main.async {
+                    self.LoadingStop()
+                }
 
                 print("Stop loading...")
             case .dataLoaded:
                 print("Data loaded...")
+                DispatchQueue.main.async {
+                    self.LoadingStop()
+                }
                 DispatchQueue.main.async {
                     // UI Main works well
                     self.productTableView.reloadData()
@@ -117,16 +119,13 @@ extension ProductListVC: UITableViewDataSource,UITableViewDelegate,UIScrollViewD
         return cell
     }
   
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
          print("Tap For Detail Page ")
          let vc = ProductDetailsVC.instantiate(fromAppStoryboard: .Main)
          vc.products = viewModel.products[indexPath.row]
-
          self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
-    
-
 }
